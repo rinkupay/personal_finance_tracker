@@ -123,6 +123,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
       const { data } = await axios.post(`${base_URL}/api/transactions`, form);
       setTransactions([...transactions, data]);
       setForm({ description: "", amount: 0, date: "", category: "" });
+      toast.success("Transaction added")
     } catch (err) {
       toast.error("Failed to add transaction");
     }
