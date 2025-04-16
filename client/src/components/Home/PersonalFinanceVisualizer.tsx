@@ -68,7 +68,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
   // Fetch budget from backend
   const fetchBudget = async () => {
     try {
-      const { data } = await axios.get(`${base_URL}/budget`);
+      const { data } = await axios.get(`${base_URL}/api/budget`);
       setBudgets(data.budget);
       console.log(data)
     } catch (error) {
