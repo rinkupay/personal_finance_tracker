@@ -89,7 +89,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
   // Fetch transaction records
   const fetchTransactions = async () => {
     try {
-      const { data } = await axios.get(`${base_URL}/transactions`);
+      const { data } = await axios.get(`${base_URL}/api/transactions`);
       setTransactions(Array.isArray(data) ? data : []);
     } catch (err) {
       toast.error("Failed to fetch transactions:");
@@ -120,7 +120,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
       return;
     }
     try {
-      const { data } = await axios.post(`${base_URL}/transactions`, form);
+      const { data } = await axios.post(`${base_URL}/api/transactions`, form);
       setTransactions([...transactions, data]);
       setForm({ description: "", amount: 0, date: "", category: "" });
     } catch (err) {
@@ -131,7 +131,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
   // Delete transaction by ID
   const deleteTransaction = async (id: string) => {
     try {
-      await axios.delete(`${base_URL}/transactions/${id}`);
+      await axios.delete(`${base_URL}/api/transactions/${id}`);
       setTransactions(transactions.filter((t) => t._id !== id));
       toast.success("Deleted successfully");
     } catch (err) {
@@ -148,7 +148,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
   // Submit updated budget to backend
   const handleSetBudget = async () => {
     try {
-      await axios.post(`${base_URL}/setbudget`, budgets);
+      await axios.post(`${base_URL}/api/setbudget`, budgets);
       toast.success("Budget is set");
     } catch (error: any) {
       toast.error(error);
@@ -159,7 +159,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
   const handleUpdateTransaction = async (updated: Transaction) => {
     try {
       const { data } = await axios.patch(
-        `${base_URL}/transactions/${updated._id}`,
+        `${base_URL}/api/transactions/${updated._id}`,
         updated
       )
       
