@@ -9,14 +9,14 @@ dotenv.config();
 
 const app = express();
 
-// app.use(cors({
-//   origin: ['http://localhost:5173','https://personal-finance-tracker-ten-kappa.vercel.app'],
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
-// }));
 app.use(cors({
-  origin: '*', // Allows requests from any origin
+  origin: ['http://localhost:5173','https://personal-finance-tracker-ten-kappa.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
 }));
+// app.use(cors({
+//   origin: '*', // Allows requests from any origin
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+// }));
 
 app.use(bodyParser.json());
 
