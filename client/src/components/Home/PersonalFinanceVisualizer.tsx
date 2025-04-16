@@ -386,6 +386,8 @@ const PersonalFinanceVisualizer: React.FC = () => {
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <PieIcon className="text-yellow-600" /> Category Breakdown
             </h2>
+           {budgets && <Fragment>
+            
             <PieChart width={400} height={300}>
               <Pie
                 data={Object.entries(categoryExpenses).map(([name, value]) => ({
@@ -402,6 +404,8 @@ const PersonalFinanceVisualizer: React.FC = () => {
               </Pie>
               <Tooltip />
             </PieChart>
+            
+            </Fragment>}
           </CardContent>
         </Card>
       </div>
