@@ -70,6 +70,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
     try {
       const { data } = await axios.get(`${base_URL}/budget`);
       setBudgets(data.budget);
+      console.log(data)
     } catch (error) {
       toast.error("Failed to fetch budget");
     }
