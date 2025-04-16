@@ -27,7 +27,7 @@ export const setBudget = async (req: Request, res: Response):Promise<any>  => {
 export const getBudget = async (_req: Request, res: Response):Promise<any>  => {
   try {
     const budget = await Budget.findOne();
-    if (!budget) return res.status(404).json({ success: false, message: 'Budget not found' });
+    if (!budget) return res.status(200).json({ success: false, message: 'Budget not found' });
     return res.status(200).json({ success: true, budget });
   } catch (error) {
     return res.status(500).json({ success: false, message: 'Failed to fetch budget' });

@@ -40,7 +40,7 @@ const getBudget = (_req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const budget = yield Budget_1.default.findOne();
         if (!budget)
-            return res.status(404).json({ success: false, message: 'Budget not found' });
+            return res.status(200).json({ success: false, message: 'Budget not found' });
         return res.status(200).json({ success: true, budget });
     }
     catch (error) {
