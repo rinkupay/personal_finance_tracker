@@ -1,4 +1,4 @@
-import { useState, useEffect, ChangeEvent } from "react";
+import React,{ useState, useEffect, ChangeEvent } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -199,13 +199,13 @@ const PersonalFinanceVisualizer: React.FC = () => {
           .filter((t) => t.category.toLowerCase() === cat.toLowerCase())
           .reduce((acc, t) => acc + Number(t.amount), 0);
   
-        console.log(`Category: ${cat} | Spent: ${spent} | Budget: ${budget}`);
+        // console.log(`Category: ${cat} | Spent: ${spent} | Budget: ${budget}`);
         return spent > Number(budget);
       })
       .map(([cat]) => cat);
   
     setInsights(
-      overspent.length > 0
+       overspent.length > 0
         ? `⚠️ Over budget this month: ${overspent.join(", ")}`
         : "✅ You are within your monthly budget!"
     );
@@ -424,11 +424,11 @@ const PersonalFinanceVisualizer: React.FC = () => {
                   >
                     <span className="w-32">{category}</span>
                     <Input
-                      className="w-[50%]"
-                      type="number"
-                      value={budgets[category.toLowerCase()] || ""}
-                      onChange={(e) => updateBudget(category, e.target.value)}
-                    />
+  className="w-[50%]"
+  type="number"
+  value={budgets[category?.toLowerCase()] || 0} // Default to 0 if undefined
+  onChange={(e) => updateBudget(category, e.target.value)}
+/>
                     <span className="text-sm text-gray-500">
                       Spent: ₹{actual.toFixed(2)}
                     </span>
