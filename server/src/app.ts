@@ -16,6 +16,10 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
+app.get('/',async(req,res)=>{
+   res.send('Hello from server')
+})
+
 // Routes
 app.use('/api', budgetRoutes);
 app.use('/api', transactionRoutes);
