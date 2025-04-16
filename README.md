@@ -37,5 +37,5 @@ A clean and responsive **React-based personal finance dashboard** to track incom
 ## 📦 Installation
 
 ### 1. Clone the repository
-
+https://github.com/rinkupay/personal_finance_tracker.git
 
