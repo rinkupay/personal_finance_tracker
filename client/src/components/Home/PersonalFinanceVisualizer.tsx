@@ -1,4 +1,4 @@
-import React,{ useState, useEffect, ChangeEvent } from "react";
+import React,{ useState, useEffect, ChangeEvent, Fragment } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -413,7 +413,9 @@ const PersonalFinanceVisualizer: React.FC = () => {
             <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
               <LineIcon className="text-pink-600" /> Budgeting Overview
             </h2>
-            <div className="space-y-4">
+         {budgets && <Fragment>
+          
+          <div className="space-y-4">
               {predefinedCategories.map((category) => {
                 const actual = currentMonthTxns
                   .filter((t) => t.category === category)
@@ -439,6 +441,7 @@ const PersonalFinanceVisualizer: React.FC = () => {
               <Button onClick={calculateInsights}>Get Insights</Button>
               {insights && <p className="text-red-600 mt-2">{insights}</p>}
             </div>
+            </Fragment>}
           </CardContent>
         </Card>
 
