@@ -39,3 +39,13 @@ A clean and responsive **React-based personal finance dashboard** to track incom
 ### 1. Clone the repository
 https://github.com/rinkupay/personal_finance_tracker.git
 
+
+ ### 2. Hosted ON
+  - **Frontend**: Vercel   Link :  https://personal-finance-tracker-ten-kappa.vercel.app/
+
+   - **Server**: Render.com    Link : https://personal-finance-tracker-3rjo.onrender.com
+
+
+### Note 
+    When you open the frontend for the firstTime backend server takes 50 secs to start....
+
